@@ -46,6 +46,6 @@ class test {
 			 int y=(x++)+(++x)+(x*10);
 			 System.out.println("y="+y);  //70*/
 			 
-
+			 System.out.println(7/2);
 	}
 }
