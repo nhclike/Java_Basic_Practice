@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">click me</button>
+<script>
+  var arr=[12,3,23,1,123,2];
+  arr.sort((a,b)=>a-b);
+  //去掉function，在()和{}之间加=>
+  //更简化: 如果函数体只有一句话，且是return，可省略{}和return
+  console.log(String(arr));
+
+  var str="那天，我去了她家，我说: 我草，你家真大。她想和我去草地野餐。"
+  str=str.replace(
+    /我[去草]{1,2}/g,
+    kw=>kw.length==2?"**":"***"
+    //如果只有一个参数，可省略()
+  );
+  console.log(str);
+
+  setTimeout(
+    ()=>console.log("耗时3秒")
+    //如果没有参数，必须保留()
+  ,3000);
+
+  document.getElementById("btn")
+    .addEventListener(
+      "click",
+      //()=>alert(this.innerHTML)
+      //当回调函数内外的this不相同时，不能使用箭头函数简化。
+//      function(){//this->btn
+//        alert(this.innerHTML);
+//      }
+      //还可:
+      e=>alert(e.target.innerHTML)
+    )
+</script>
+</body>
+</html>

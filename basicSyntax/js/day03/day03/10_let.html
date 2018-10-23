@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  +function(){
+    var t=0;//开始时间0秒
+    console.log(
+      "连接数据库...耗时0.3秒");
+    t+=0.3;
+    +function(err){
+      //var t;//undefined
+      console.log(
+        "查询数据...耗时0.8秒"
+      );
+      t+=0.8;
+      console.log("总耗时:"+t);//1.1
+
+      if(err){
+        let /*var*/ t=new Date();
+        console.log("发生了错误,at:"+t);
+      }
+      console.log(t);//1.1
+    }(true)
+  }()
+</script>
+</body>
+</html>

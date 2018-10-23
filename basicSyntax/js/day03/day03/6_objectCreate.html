@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  var father={
+    bal:1000000000, car:"infiniti"
+  };
+  var lilei=Object.create(father,{
+    phone:{
+      value:"iPhone8 plus",
+      writable:true,
+      enumerable:true,
+      configurable:true
+    },
+    gf:{
+      value:"Han Meimei",
+      writable:true,
+      enumerable:true,
+      configurable:true
+    }
+  });
+  console.dir(lilei);
+</script>
+</body>
+</html>

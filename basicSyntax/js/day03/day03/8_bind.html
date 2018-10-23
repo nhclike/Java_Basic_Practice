@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  function calc(base,bonus1,bonus2){
+    var sum=base+bonus1+bonus2;
+    console.log(
+      this.ename+"的总工资是:"+sum);
+  }
+  var lilei={ename:"Li Lei"};
+  var hmm={ename:"Han Meimei"};
+  //lilei买一个专属的新的计算器:
+    //功能和calc完全一样
+    //this永久->lilei
+    //base永久->10000
+  var lilei_calc=calc.bind(lilei,10000);
+  //lilei_calc:
+  //function calc(10000,bonus1,bonus2){
+  //  var sum=10000+bonus1+bonus2;
+  //  console.log(
+  //    lilei.ename+"的总工资是:"+sum);
+  //}
+  lilei_calc(1000,2000);
+  //hmm借lilei的计算器:替换lilei计算器中的this为hmm，并传入底薪和奖金
+  //lilei_calc.call(hmm,4000,6000,5000);
+  //bind绑定的this，无法被call/apply再替换
+</script>
+</body>
+</html>

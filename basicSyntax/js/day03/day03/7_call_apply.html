@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  function calc(base,bonus1,bonus2){
+    var sum=base+bonus1+bonus2;
+    console.log(
+      this.ename+"的总工资是:"+sum);
+  }
+  var lilei={ename:"Li Lei"};
+  var hmm={ename:"Han Meimei"};
+  //lilei临时借用一下calc:将calc中的this临时替换为lilei
+  calc.call(lilei,10000,1000,2000);
+  //hmm临时借用一下calc:将calc中的this临时替换为hmm
+  calc.apply(hmm,[4000,5000,6000]);
+</script>
+</body>
+</html>

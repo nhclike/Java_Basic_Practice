@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  (function(){
+    var time=new Date();
+    alert("页面开始加载...,at:"+time);
+  })();//time随函数释放
+</script>
+<h1>Welcome</h1>
+<p>welcome to my first web site</p>
+<script>//休息10分钟，练习10分钟
+  (function(){
+    var time=new Date();
+    alert("页面加载完成,at:"+time);
+  })();//time也随匿名函数一同释放了
+  console.log(time);//ReferenceError
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  function pay(                    ){
+   //arguments["xxxx xxxx","123456"]
+    if(arguments.length==0)
+      console.log("手机支付!");
+    else if(arguments.length==1)
+      console.log("现金支付 "+
+        arguments[0]+" 元!");
+    else
+      console.log(
+        arguments[0]+"卡支付成功!");
+  }
+
+  pay();//手机支付!
+  pay(100);//现金支付!
+  pay("6456 0123","123456");//刷卡支付!
+
+  //定义函数add，可实现任意个数字相加求和
+  function add(){
+    //遍历arguments中每个收到的参数，累加到sum中
+    for(var i=0,sum=0;
+        i<arguments.length;
+        i++){
+      sum+=arguments[i];
+    }
+    return sum;
+  }
+  console.log(
+    add(1,2,3),    //6
+    add(1,2,3,4,5) //15
+  );
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  function Student(sname,sage){
+    this.sname=sname;
+    this.sage=sage;
+  }
+  Student.prototype.intr=function(){
+    console.log(
+      "I'm "+this.sname
+      +", I'm "+this.sage
+      +", I'm from "+this.className);
+  }
+  Student.prototype.className=
+                          "初一2班";
+  var lilei=new Student("Li Lei",11);
+  var hmm=new Student("Han Meimei",12);
+  console.dir(lilei);
+  console.dir(hmm);
+  lilei.intr();
+  hmm.intr();
+  console.log(lilei.intr==hmm.intr);
+  //李磊的爹和韩梅梅的爹是同一个人吗？
+  console.log(
+    lilei.__proto__==hmm.__proto__);
+  //Student的老公和李磊的爹是同一个人吗？
+  console.log(
+    Student.prototype==lilei.__proto__
+  );
+  lilei.sage++;//修改自有属性
+  //修改共有属性
+  Student.prototype.className=
+                          "初二2班";
+  lilei.intr();
+  hmm.intr();
+
+  console.log("sage" in lilei);//true
+  console.log("intr" in lilei);//true
+</script>
+</body>
+</html>

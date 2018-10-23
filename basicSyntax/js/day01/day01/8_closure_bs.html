@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  function fun(){
+    var n=999;//受保护的变量
+    //给不存在的nAdd赋值，会自动创建全局nAdd
+    nAdd=function(){n++};
+    return function(){
+      console.log(n)
+    }
+  }
+  var get=fun();
+  //get:function(){console.log(n)}
+  get();//999
+  nAdd();
+  get();//1000
+</script>
+</body>
+</html>
